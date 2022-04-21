@@ -156,7 +156,7 @@ kbd {
 }
 
 body {
-	overflow: hidden;
+	overflow: auto;
 }
 
 .carousel-indicators li {
