@@ -100,7 +100,7 @@ for i in reader:
         elif not pd.isna(i[4]):
             url, path = i[4], 2021
         if url and path:
-            if not os.path.exists(f'{path}/{i[0]}.html'):
+            if not os.path.exists(f'{path}/{i[1]}.html'):
                 capa = DesiredCapabilities.CHROME
                 capa["pageLoadStrategy"] = "none"
                 driver = webdriver.Chrome('/home/tst/Downloads/chromedriver_linux64/chromedriver', desired_capabilities=capa)
@@ -121,7 +121,7 @@ for i in reader:
                 except NoSuchElementException:
                     pass
                 html = head + html + body
-                open(f'{path}/{i[0]}.html', 'w').write(html)
+                open(f'{path}/{i[1]}.html', 'w').write(html)
                 print("Done")
                 driver.close()
     except InvalidSessionIdException as err:
